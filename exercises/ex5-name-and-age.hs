@@ -3,9 +3,9 @@ import Prelude ()
 
 inner :: Action ()
 inner io1 =
-  let _ = echoName
-      _ = echoAge
-   in _
+  let (io2, ()) = echoName io1
+      (io3, ()) = echoAge io2
+   in (io3, ())
 
 echoName :: Action ()
 echoName io1 =

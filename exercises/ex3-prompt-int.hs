@@ -2,6 +2,7 @@ import FakeIt2
 import Prelude ()
 
 promptString :: String -> Action String
+--                                       String -> IOState -> (IOState, String)
 promptString msg io1 =
   let (io2, ()) = print msg io1
       (io3, str) = getString io2
